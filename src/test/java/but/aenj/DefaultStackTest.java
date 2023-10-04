@@ -1,5 +1,6 @@
 package but.aenj;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.EmptyStackException;
 
@@ -13,6 +14,19 @@ class DefaultStackTest {
     // Pile par défaut
     private DefaultStack stack;
 
+    // Items utilisés pour les tests
+    private DefaultItem item1;
+    private DefaultItem item2;
+
+    /**
+     * Méthode initialisant les variables utiles pour les tests
+     */
+    @BeforeEach
+    void setUp() {
+        item1 = new DefaultItem();
+        item2 = new DefaultItem();
+    }
+
     /**
      * Test de la classe IsEmpty avec une pile vide.
      */
@@ -21,7 +35,6 @@ class DefaultStackTest {
         stack = new DefaultStack();
         // La pile doit être vide car on a rien ajouté dedans
         assertTrue(stack.isEmpty(), "Pile non vide");
-
     }
 
     /**
@@ -41,9 +54,7 @@ class DefaultStackTest {
     void pushItem() {
         stack = new DefaultStack();
 
-        // On crée un item
-        DefaultItem item1 = new DefaultItem();
-        // On pousse l'item crée dans la pile
+        // On pousse un item dans la pile
         stack.push(item1);
 
         // Alors la pile doit être maintenant de taille 1
@@ -57,12 +68,10 @@ class DefaultStackTest {
     void isEmptyPileNonVide() {
         stack = new DefaultStack();
 
-        // On crée un item
-        DefaultItem item1 = new DefaultItem();
-        // On pousse l'item crée dans la pile
+        // On pousse un item dans la pile
         stack.push(item1);
 
-        // La pile ne doit pas être vide car on a rien ajouté dedans
+        // La pile ne doit pas être vide car on a ajouté un item dedans
         assertFalse(stack.isEmpty(), "Pile vide");
 
     }
@@ -74,9 +83,7 @@ class DefaultStackTest {
     void getSizePileNonVide() {
         stack = new DefaultStack();
 
-        // On crée un item
-        DefaultItem item1 = new DefaultItem();
-        // On pousse l'item crée dans la pile
+        // On pousse un item dans la pile
         stack.push(item1);
 
         // La pile doit contenir un élément
@@ -103,21 +110,17 @@ class DefaultStackTest {
     void peekPileNonVide() {
         stack = new DefaultStack();
 
-        // On crée un item
-        DefaultItem item1 = new DefaultItem();
-        // On pousse l'item crée dans la pile
+        // On pousse un item dans la pile
         stack.push(item1);
 
         // Cela doit renvoyer l'élément en haut de la pile
-        assertEquals(item1, stack.peek(), "L'item n'est pas renvoyé");
+        assertEquals(item1, stack.peek(), "L'item renvoyé n'est pas le bon");
 
-        // On crée un autre item
-        DefaultItem item2 = new DefaultItem();
-        // On pousse l'item crée dans la pile
+        // On pousse un deuxième item dans la pile
         stack.push(item2);
 
-        // Cela doit renvoyer l'élément en haut de la pile (donc item2, le dernier item push)
-        assertNotEquals(item1, stack.peek(), "L'item renvoyé n'est pas le bon");
+        // Cela doit renvoyer l'item 2 car c'est le dernier a avoir été ajouté (il est donc en haut de la pile)
+        assertEquals(item2, stack.peek(), "L'item renvoyé n'est pas le bon");
 
     }
 
@@ -140,9 +143,7 @@ class DefaultStackTest {
     void popPileNonVide() {
         stack = new DefaultStack();
 
-        // On crée un item
-        DefaultItem item1 = new DefaultItem();
-        // On pousse l'item crée dans la pile
+        // On pousse un item crée dans la pile
         stack.push(item1);
 
         // Cela doit renvoyer l'élément en haut de la pile
@@ -150,9 +151,9 @@ class DefaultStackTest {
 
         // Étant donné que l'on fait un pop, l'élément doit être retiré, et la pile doit être vide
         assertTrue(stack.isEmpty(), "La pile n'est pas vide");
+        // La pile doit être de taille 0
+        assertEquals(0, stack.getSize(), "La pile n'est pas de taille 0");
 
-        // On crée un autre item
-        DefaultItem item2 = new DefaultItem();
         // On pousse le premier item dans la pile
         stack.push(item1);
         // On pousse le deuxième item dans la pile
