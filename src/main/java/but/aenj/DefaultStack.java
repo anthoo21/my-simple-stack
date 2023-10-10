@@ -5,12 +5,13 @@ import java.util.EmptyStackException;
 import java.util.List;
 
 /**
- * Classe qui implément l'interface SimpleStack.
+ * Classe qui implément l'interface SimpleStack
+ * avec une liste d'items représentant la pile.
  */
 public class DefaultStack implements SimpleStack {
 
     /**
-     * Liste d'item représentant la pile.
+     * Liste d'items représentant la pile.
      */
     private List<Item> stack;
 
