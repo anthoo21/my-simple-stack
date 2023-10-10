@@ -23,8 +23,8 @@ public class DefaultStack implements SimpleStack {
 
     /**
      * Tests if this stack is empty.
-     * @return true si pile vide
-     *         false sinon
+     * @return true si pile vide.
+     *         false sinon.
      */
     @Override
     public boolean isEmpty() {
@@ -33,7 +33,7 @@ public class DefaultStack implements SimpleStack {
 
     /**
      * Returns the number of items in this stack.
-     * @return la taille de la pile
+     * @return la taille de la pile.
      */
     @Override
     public int getSize() {
@@ -43,7 +43,7 @@ public class DefaultStack implements SimpleStack {
     /**
      * Pushes an item onto the top of this stack.
      * null item is allowed.
-     * @param item Item à pousser sur la pile
+     * @param item Item à pousser sur la pile.
      */
     @Override
     public void push(final Item item) {
@@ -54,7 +54,7 @@ public class DefaultStack implements SimpleStack {
      * Looks at the object at the top of this stack without removing it from the
      stack.
      * @throws EmptyStackException if this stack is empty.
-     * @return l'item en haut de la pile
+     * @return l'item en haut de la pile.
      */
     @Override
     public Item peek() throws EmptyStackException {
@@ -68,7 +68,7 @@ public class DefaultStack implements SimpleStack {
      * Removes the object at the top of this stack and returns that object
      * as the value of this function.
      * @throws EmptyStackException if this stack is empty.
-     * @return l'item en haut de la pile
+     * @return l'item en haut de la pile.
      */
     @Override
     public Item pop() throws EmptyStackException {
