@@ -15,7 +15,7 @@ public class DefaultStack implements SimpleStack {
     private List<Item> stack;
 
     /**
-     * Constructeur de la classe DefaultStack.
+     * Constructeur public de la classe DefaultStack.
      */
     public DefaultStack() {
         this.stack = new ArrayList<>();
@@ -23,12 +23,14 @@ public class DefaultStack implements SimpleStack {
 
     /**
      * Tests if this stack is empty.
-     * @return true si pile vide.
-     *         false sinon.
+     * @return true si pile vide
+     *         false sinon
      */
     @Override
     public boolean isEmpty() {
+
         return stack.isEmpty();
+
     }
 
     /**
