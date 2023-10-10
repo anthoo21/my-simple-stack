@@ -5,17 +5,18 @@ import java.util.EmptyStackException;
 import java.util.List;
 
 /**
- * Classe qui implément l'interface SimpleStack.
+ * Classe qui implément l'interface SimpleStack
+ * avec une liste d'items représentant la pile.
  */
 public class DefaultStack implements SimpleStack {
 
     /**
-     * Liste d'item représentant la pile.
+     * Liste d'items représentant la pile.
      */
     private List<Item> stack;
 
     /**
-     * Constructeur de la classe DefaultStack.
+     * Constructeur public de la classe DefaultStack.
      */
     public DefaultStack() {
         this.stack = new ArrayList<>();
@@ -28,12 +29,14 @@ public class DefaultStack implements SimpleStack {
      */
     @Override
     public boolean isEmpty() {
+
         return stack.isEmpty();
+
     }
 
     /**
      * Returns the number of items in this stack.
-     * @return la taille de la pile
+     * @return la taille de la pile.
      */
     @Override
     public int getSize() {
@@ -43,7 +46,7 @@ public class DefaultStack implements SimpleStack {
     /**
      * Pushes an item onto the top of this stack.
      * null item is allowed.
-     * @param item Item à pousser sur la pile
+     * @param item Item à pousser sur la pile.
      */
     @Override
     public void push(final Item item) {
@@ -54,7 +57,7 @@ public class DefaultStack implements SimpleStack {
      * Looks at the object at the top of this stack without removing it from the
      stack.
      * @throws EmptyStackException if this stack is empty.
-     * @return l'item en haut de la pile
+     * @return l'item en haut de la pile.
      */
     @Override
     public Item peek() throws EmptyStackException {
@@ -68,7 +71,7 @@ public class DefaultStack implements SimpleStack {
      * Removes the object at the top of this stack and returns that object
      * as the value of this function.
      * @throws EmptyStackException if this stack is empty.
-     * @return l'item en haut de la pile
+     * @return l'item en haut de la pile.
      */
     @Override
     public Item pop() throws EmptyStackException {
