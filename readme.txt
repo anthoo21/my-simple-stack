@@ -1,0 +1,1 @@
+Projet my-simple-stack dans le cadre du cours "Qualité de développement"
